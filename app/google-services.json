@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "371406267338",
+    "project_id": "instaverse-fbbdd",
+    "storage_bucket": "instaverse-fbbdd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:371406267338:android:2886699ec8d1ebafdf2533",
+        "android_client_info": {
+          "package_name": "com.example.instaverse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "371406267338-vg3voisfi69j0hr9jl17q54ksjso05j3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8-pUYbZN6CUhwBhFS1VJp6n-hCYVNqAE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "371406267338-vg3voisfi69j0hr9jl17q54ksjso05j3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
