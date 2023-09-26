@@ -75,4 +75,6 @@
     <string name="share_to_reel">Share to Reel</string>
     <string name="like">Like</string>
     <string name="message">Message</string>
+    <string name="instaverse">Instaverse</string>
+    <string name="log_out">Log Out</string>
 </resources>

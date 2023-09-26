@@ -1,9 +1,9 @@
 package com.example.instaverse
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.instaverse.Models.userModel
 import com.example.instaverse.databinding.ActivityLoginBinding
 import com.google.firebase.auth.ktx.auth
@@ -45,6 +45,10 @@ class LoginActivity : AppCompatActivity() {
                         }
                     }
             }
+        }
+
+        binding.signUpButton.setOnClickListener {
+            startActivity(Intent(this@LoginActivity,SignUpActivity::class.java))
         }
     }
 }

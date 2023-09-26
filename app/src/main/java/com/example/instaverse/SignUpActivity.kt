@@ -1,12 +1,12 @@
 package com.example.instaverse
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Html
+import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.app.ActivityCompat
+import androidx.appcompat.app.AppCompatActivity
 import com.example.instaverse.Models.userModel
 import com.example.instaverse.databinding.ActivitySignUpBinding
 import com.example.instaverse.utils.USER_NODE
@@ -14,7 +14,6 @@ import com.example.instaverse.utils.USER_PROFILE_FOLDER
 import com.example.instaverse.utils.uploadImage
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.auth.User
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
@@ -45,7 +44,7 @@ class SignUpActivity : AppCompatActivity() {
         userModel = userModel()
         if (intent.hasExtra("MODE")){
             if(intent.getIntExtra("MODE",-1)==1){
-
+                binding.logOutButton.visibility = View.VISIBLE
                 binding.signUpButton.text = "Update Profile"
                 Firebase.firestore.collection(USER_NODE).document(Firebase.auth.currentUser!!.uid).get()
                     .addOnSuccessListener {
@@ -58,6 +57,11 @@ class SignUpActivity : AppCompatActivity() {
                         binding.passwordField.editText?.setText(userModel.password)
                     }
             }
+        }
+        binding.logOutButton.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            binding.logOutButton.visibility = View.GONE
+            startActivity(Intent(this@SignUpActivity, LoginActivity::class.java))
         }
         binding.signUpButton.setOnClickListener {
             if (intent.hasExtra("MODE")){

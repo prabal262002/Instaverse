@@ -44,8 +44,8 @@ class ReelFragment : Fragment() {
                 val reel = i.toObject<Reel>()!!
                 tempList.add(reel)
             }
+            tempList.shuffle()
             reelList.addAll(tempList)
-            reelList.reverse()
             adapter.notifyDataSetChanged()
         }
 

@@ -44,6 +44,7 @@ class HomeFragment : Fragment() {
                 val post:Post = i.toObject<Post>()!!
                 tempList.add(post)
             }
+            tempList.shuffle()
             postList.addAll(tempList)
             adapter.notifyDataSetChanged()
         }
