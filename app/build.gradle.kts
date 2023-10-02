@@ -64,4 +64,5 @@ dependencies {
     implementation ("com.github.bumptech.glide:glide:4.16.0")
 
     implementation ("com.github.marlonlom:timeago:4.0.3")
+
 }

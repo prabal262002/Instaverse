@@ -1,6 +1,7 @@
 package com.example.instaverse.adapters
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,7 +27,9 @@ class ReelAdapter(var context: Context, private var reelList: ArrayList<Reel>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         Picasso.get().load(reelList[position].profileLink).placeholder(R.drawable.user).into(holder.binding.profileImage)
         holder.binding.caption.text = reelList[position].caption
-        holder.binding.videoView.setVideoPath(reelList.get(position).reelUrl)
+
+        holder.binding.videoView.setVideoPath(reelList[position].reelUrl)
+        Log.d("video URL", "onBindViewHolder: ${reelList[position].reelUrl}")
         holder.binding.videoView.setOnPreparedListener {
             holder.binding.progressBar.visibility = View.GONE
             holder.binding.videoView.start()

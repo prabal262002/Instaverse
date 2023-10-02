@@ -56,7 +56,7 @@ class AddPostActivity : AppCompatActivity() {
             Firebase.firestore.collection(USER_NODE).document(Firebase.auth.currentUser!!.uid)
                 .get().addOnSuccessListener {
                     val user = it.toObject<userModel>()!!
-                    val post: Post = Post(
+                    val post = Post(
                         postUrl = imageUrl!!,
                         caption = binding.addCaption.editText?.text.toString(),
                         uid = Firebase.auth.currentUser!!.uid,

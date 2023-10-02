@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,6 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.InstaVerse"
         tools:targetApi="31">
+        <activity
+            android:name=".ShowReelActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ShowPicActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Messaging"
+            android:exported="false" />
         <activity
             android:name=".AddReelActivity"
             android:exported="false" />
