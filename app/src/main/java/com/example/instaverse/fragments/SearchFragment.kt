@@ -47,7 +47,7 @@ class SearchFragment : Fragment() {
             adapter.notifyDataSetChanged()
         }
         binding.searchButton.setOnClickListener {
-            val text = binding.searchView.text.toString()
+            val text = binding.searchView.text.toString().lowercase()
             Firebase.firestore.collection(USER_NODE).whereEqualTo("name", text).get()
                 .addOnSuccessListener {
                     val tempList = ArrayList<userModel>()

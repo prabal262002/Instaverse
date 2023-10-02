@@ -6,27 +6,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.HomeFragment" >
-
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/materialToolbar2"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/Base.Theme.InstaVerse"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="Instaverse"
-        app:titleMarginStart="10dp" />
+        android:id="@+id/ll">
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/materialToolbar2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/windowBackground"
+            android:minHeight="?attr/actionBarSize"
+            android:layout_weight="1"
+            android:theme="?attr/actionBarTheme"
+            app:title="Instaverse"
+            app:titleMarginStart="10dp" />
+        <ImageView
+            android:layout_marginEnd="15dp"
+            android:layout_width="40dp"
+            android:id="@+id/send"
+            android:layout_height="40dp"
+            android:padding="3dp"
+            android:foregroundGravity="center_vertical"
+            android:layout_gravity="end"
+            android:src="@drawable/send"
+            />
+    </LinearLayout>
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/ScrollView"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/materialToolbar2">
+        app:layout_constraintTop_toBottomOf="@id/ll">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

@@ -2,10 +2,7 @@ package com.example.instaverse.fragments
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
-import android.view.Menu
-import android.view.MenuInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
@@ -13,7 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.instaverse.Messaging
 import com.example.instaverse.Models.Post
-import com.example.instaverse.R
 import com.example.instaverse.adapters.PostAdapter
 import com.example.instaverse.databinding.FragmentHomeBinding
 import com.example.instaverse.utils.POST
@@ -51,21 +47,12 @@ class HomeFragment : Fragment() {
             postList.addAll(tempList)
             adapter.notifyDataSetChanged()
         }
+
+        binding.send.setOnClickListener {
+            activity?.startActivity(Intent(requireContext(), Messaging::class.java))
+        }
         return binding.root
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        Log.d("MenuClick", "Menu item clicked....")
-        inflater.inflate(R.menu.option_menu,menu)
-        val menuItemView: View? = binding.materialToolbar2.findViewById(R.id.messageSend)
-        Log.d("MenuClick", "Menu item clicked..")
-        menuItemView?.setOnClickListener {
-            Log.d("MenuClick", "Menu item clicked")
-            activity?.startActivity(Intent(requireContext(), Messaging::class.java))
-        }
-
-        super.onCreateOptionsMenu(menu, inflater)
-
-    }
 
 }
